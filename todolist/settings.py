@@ -67,7 +67,8 @@ DATABASES = {
         'NAME': 'app_db',
         'USER': 'app_user',
         'PASSWORD': '1234',
-        'HOST': 'localhost',  # Use localhost
+        # When running in containers, set DB_HOST to the MySQL container name or IP
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': '',  # Leave this empty to use the default MySQL port (3306).
     }
 

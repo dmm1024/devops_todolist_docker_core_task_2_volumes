@@ -44,10 +44,20 @@ Copy that IP (e.g. `172.17.0.2`) to use in the next step.
 
 ```bash
 # Replace <MYSQL_IP> with the value from the previous step
-docker build --build-arg -t todoapp:2.0.0 .
+docker build --build-arg DB_HOST=<MYSQL_IP> -t todoapp:2.0.0 .
 ```
 
-Note: the app `Dockerfile` runs `python manage.py migrate` during build time.
+Note: the app `Dockerfile` runs `python manage.py migrate` during build time. Make sure the MySQL container is reachable from the build environment (or use an alternative approach such as running migrations at container startup).
+
+## Docker Hub link for the app image
+
+Add the direct link to your pushed `todoapp:2.0.0` image below (replace `<YOUR_DOCKERHUB_USERNAME>` with your username):
+
+```
+https://hub.docker.com/r/<YOUR_DOCKERHUB_USERNAME>/todoapp
+```
+
+Place the above link in this file when you have pushed the image to Docker Hub.
 
 ## Run App container
 
