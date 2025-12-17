@@ -8,7 +8,9 @@ COPY . .
 
 # Stage 2: Run Stage
 FROM python:${PYTHON_VERSION} AS run
-
+# Allow passing DB_HOST during build and make it available as an env var
+ARG DB_HOST
+ENV DB_HOST=${DB_HOST}
 WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1

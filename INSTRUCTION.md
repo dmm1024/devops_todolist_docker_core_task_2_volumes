@@ -71,15 +71,13 @@ Open the app at: http://localhost:8080/ (default Django runserver configured to 
 
 ```bash
 # Tag and push mysql-local
-docker tag mysql-local:1.0.0 YOUR_DOCKERHUB_USERNAME/mysql-local:1.0.0
-docker push YOUR_DOCKERHUB_USERNAME/mysql-local:1.0.0
+docker tag mysql-local:1.0.0 dmn1024/mysql-local:1.0.0
+docker push dmn1024/mysql-local:1.0.0
 
 # Tag and push app
-docker tag todoapp:2.0.0 YOUR_DOCKERHUB_USERNAME/todoapp:2.0.0
-docker push YOUR_DOCKERHUB_USERNAME/todoapp:2.0.0
+docker tag todoapp:2.0.0 dmn1024/todoapp:2.0.0
+docker push dmn1024/todoapp:2.0.0
 ```
-
-Replace `YOUR_DOCKERHUB_USERNAME` with your Docker Hub username (login with `docker login`).
 
 ## Tips and caveats
 
